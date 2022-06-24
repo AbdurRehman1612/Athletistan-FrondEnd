@@ -41,14 +41,13 @@ const Testimonials = () => {
         for (var i = 0; i < res.data.length; i++) {
           res.data.map((rd) => {
             rej1.push(rd.requestrejectedby);
-            console.log("rej1", rej1);
           });
 
           if (!rej1.some((name) => name.includes(coachid))) {
             datatoshow1.push(res.data[i]);
           }
         }
-        console.log("datatoshow1", datatoshow1);
+
         setathletesdata(datatoshow1);
       });
   };
@@ -68,14 +67,13 @@ const Testimonials = () => {
         for (var i = 0; i < res.data.length; i++) {
           res.data.map((rd) => {
             rej.push(rd.customizedreqrejectedby);
-            console.log("rej", rej);
           });
 
           if (!rej.some((name) => name.includes(coachid))) {
             datatoshow.push(res.data[i]);
           }
         }
-        console.log("datatoshow", datatoshow);
+
         setcustomizedathletesdata(datatoshow);
       });
   };
@@ -86,7 +84,6 @@ const Testimonials = () => {
   }, []);
 
   const onChange = (e) => {
-    console.log(e.target.value);
     setreqtype(e.target.value);
   };
 
@@ -129,8 +126,6 @@ const Testimonials = () => {
         }
       )
       .then((res) => {
-        console.log("detailsofathleteeee===========>", res.data);
-
         setathletedetails(res.data);
       });
   };
@@ -143,8 +138,6 @@ const Testimonials = () => {
   };
 
   const handledirectaccept = (id) => {
-    console.log("id", id);
-
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/acceptdirectreq`,
       {
@@ -155,8 +148,6 @@ const Testimonials = () => {
     refresh();
   };
   const handledirectreject = (id) => {
-    console.log("id", id);
-
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/rejectdirectreq`,
       {
@@ -170,7 +161,6 @@ const Testimonials = () => {
 
   const handlecustomizedaccepted = (id) => {
     setshowconfirmation(true);
-    console.log("id", id);
 
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/acceptcustomizedreq`,
@@ -186,7 +176,6 @@ const Testimonials = () => {
     refresh();
   };
   const handlecustomizedreject = (id) => {
-    console.log("id", id);
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/rejectcustomizedreq`,
       {
@@ -197,12 +186,6 @@ const Testimonials = () => {
     alert("Request has been removed successfully!");
     refresh();
   };
-
-  console.log("reqtype", reqtype);
-  console.log("reqtype", reqtype);
-  console.log("showdetails", showdetails);
-  console.log("customizedathletesdata", customizedathletesdata);
-  console.log("athletedetails", athletedetails);
 
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>

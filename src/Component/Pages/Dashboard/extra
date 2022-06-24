@@ -59,7 +59,7 @@
 //   };
 
 //   const details = mydetails;
-//   // console.log(`details`, details);
+//   // 
 //   const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
 //   const token = useSelector((state) => state.auth?.authData?.token);
 //   const history = useHistory();
@@ -72,7 +72,7 @@
 //   const [showmyprofile, setshowmyprofile] = useState(false);
 
 //   const data = useSelector((state) => state.dashboardReducer?.getmyprofdata);
-//   console.log(`data from useSelector`, data);
+//   
 
 //   const fieldnames = [
 //     "Name",

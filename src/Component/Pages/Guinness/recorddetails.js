@@ -14,7 +14,7 @@ const Recorddetails = () => {
   const [rdata, setrdata] = useState([]);
   const [reldata, setreldata] = useState([]);
   const params = useParams();
-  console.log("params", params);
+
   useEffect(() => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/guinness/rdetails`, {
@@ -23,17 +23,16 @@ const Recorddetails = () => {
         },
       })
       .then((res) => {
-        console.log("res.dataaaaaaaaaaaa", res.data);
         setrdata(res.data);
       });
   }, []);
 
   // const func = (m) => {
   //   const result = m.find(({ name }) => name.who === params.who);
-  //   console.log("x", result);
+  //
   // };
 
-  // console.log("xxxxxxxxx", x);
+  //
   //   };
 
   const token = useSelector((state) => state.auth?.authData?.token);
@@ -96,8 +95,6 @@ const Recorddetails = () => {
   };
 
   var result = {};
-
-  console.log("data", rdata);
 
   return (
     <div>

@@ -66,14 +66,12 @@ const Athlete = () => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/sportslist`)
       .then((res) => {
-        console.log("olympics>", res.data);
         setolympicssportsname(res.data);
       });
 
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/guinnesscatlist`)
       .then((resp) => {
-        console.log("guinness>", resp.data);
         setguinnesscatname(resp.data);
       });
 
@@ -158,8 +156,6 @@ const Athlete = () => {
     setForm({ ...form, contactno: value });
   };
 
-  console.log("form:>> ", form);
-
   const noofexperience = [
     "Less than 1 year",
     "1 to 3 years",
@@ -180,10 +176,8 @@ const Athlete = () => {
     history.push("/coachsignup");
   };
 
-  console.log("e", e);
   const s = guinnesscatname.sort();
 
-  console.log("wp", wp);
   return (
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>

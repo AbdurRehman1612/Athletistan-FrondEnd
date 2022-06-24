@@ -116,8 +116,6 @@ const Olympics = () => {
     history.push("/historyolympics");
   };
 
-  console.log("olympicsdata", olympicsdata);
-
   let cards = [
     {
       key: uuidv4(),
@@ -157,7 +155,6 @@ const Olympics = () => {
     },
   ];
   const handleid = (name) => {
-    console.log("name", name);
     history.push(`/olympicsdetails/${name}`);
   };
   return (

@@ -133,9 +133,9 @@ const Athleteevaluation = () => {
       Number(coachreview?.q8) +
       Number(coachreview?.q9) +
       Number(coachreview?.q10);
-    console.log("sum", summ);
+    
     average = summ / 10;
-    console.log("avv", average);
+    
 
     setcoachreview({ ...coachreview, sum: summ, avg: average });
   };
@@ -148,8 +148,8 @@ const Athleteevaluation = () => {
         alldata: coachreview,
       }
     );
-    console.log("id", id);
-    console.log("coachreview", coachreview);
+    
+    
     alert("Thank you for your feedback");
     refresh();
   };
@@ -168,10 +168,10 @@ const Athleteevaluation = () => {
   //   pdf.save("print.pdf");
   // };
 
-  console.log("coaches", coaches);
-  console.log("alldata", alldata);
-  console.log("selectedcoach", selectedcoach);
-  console.log("coachreview", coachreview);
+  
+  
+  
+  
 
   return (
     <div>
@@ -840,8 +840,8 @@ const Athleteevaluation = () => {
                                                         Number(gp.fitnessrating)
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.fitness",
                                                         gp.fitnessrating
                                                       );
@@ -866,8 +866,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.fitness",
                                                         gp.fitnessrating
                                                       );
@@ -931,8 +931,8 @@ const Athleteevaluation = () => {
                                                         )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.performancerating
                                                       );
@@ -957,8 +957,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.performancerating
                                                       );
@@ -1020,8 +1020,8 @@ const Athleteevaluation = () => {
                                                         Number(gp.skillsrating)
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.skillsrating
                                                       );
@@ -1046,8 +1046,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.skillsrating
                                                       );
@@ -1120,8 +1120,8 @@ const Athleteevaluation = () => {
                                                         )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.disciplinerating
                                                       );
@@ -1146,8 +1146,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.disciplinerating
                                                       );
@@ -1209,8 +1209,8 @@ const Athleteevaluation = () => {
                                                         Number(gp.staminarating)
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.staminarating
                                                       );
@@ -1235,8 +1235,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.staminarating
                                                       );
@@ -1297,8 +1297,8 @@ const Athleteevaluation = () => {
                                                         Number(gp.balancerating)
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.balancerating
                                                       );
@@ -1323,8 +1323,8 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      console.log("gold", gold);
-                                                      console.log(
+                                                      
+                                                      
                                                         "gp.gold",
                                                         gp.balancerating
                                                       );

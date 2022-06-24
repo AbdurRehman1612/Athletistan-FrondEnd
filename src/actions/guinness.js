@@ -14,7 +14,6 @@ export const Breakrecord = (details, router) => async (dispatch) => {
 
     dispatch({ type: breaktherecord, data });
     router.push("/breaktherecord");
-    console.log(data);
   } catch (error) {
     dispatch(errors(error?.response?.data?.message));
   }

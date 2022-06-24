@@ -51,7 +51,6 @@ const Searchacoach = () => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/searchacoach/coachdetails`)
       .then((res) => {
-        console.log("coachhhhhhhhhh===========>", res.data);
         setcoachdata(res.data);
       });
   };
@@ -60,7 +59,6 @@ const Searchacoach = () => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/sportslist`)
       .then((res) => {
-        console.log("===========>", res.data);
         res.data.unshift("ALL SPORTS");
         sort(res.data);
       });
@@ -184,23 +182,16 @@ const Searchacoach = () => {
   };
 
   const enddate = (date, day) => {
-    console.log("date", date);
-    console.log("day", day);
     var d = date.substr(0, 10);
 
     var res = new Date(d);
 
-    console.log("resenddate1", res);
-
     var days = day * 7;
 
     res.setDate(res.getDate() + days);
-    console.log("resenddate2", res);
 
     seted(res);
     setalldetails({ ...alldetails, trainingenddate: res });
-
-    console.log("final", alldetails?.trainingenddate);
   };
 
   const handleclose = () => {
@@ -225,8 +216,6 @@ const Searchacoach = () => {
         },
       })
       .then((res) => {
-        console.log("===========>", res.data);
-
         setcoachdetails(res.data);
       });
 
@@ -295,7 +284,7 @@ const Searchacoach = () => {
   };
 
   // const handletime = (slot) => {
-  //   console.log("slot :>> ", slot);
+  //
   // };
 
   const handlebutton = (st, tw, ef, dp) => {
@@ -672,17 +661,11 @@ const Searchacoach = () => {
 
     var days = day * 7;
 
-    console.log("days", days);
-
     result.setDate(result.getDate() + days);
-
-    console.log("result", result);
 
     setalldetails({ ...alldetails, trainingenddate: result });
 
     // setalldetails({ ...alldetails, trainingenddate: result });
-
-    console.log("trainingenddate", alldetails?.trainingenddate);
   };
 
   const handlecussubmit = () => {
@@ -713,15 +696,6 @@ const Searchacoach = () => {
     // alert("Request has been send successfully");
   };
 
-  console.log("sport", sport);
-  console.log("coachdata", coachdata);
-  console.log("coachdetails", coachdetails);
-  console.log("alldetails", alldetails);
-
-  console.log("cityfilters", cityfilters);
-  console.log("genderfilters", genderfilters);
-  console.log("noofexpfilters", noofexpfilters);
-  console.log("ed", ed);
   if (accounttype === "Athlete") {
     return (
       <div>

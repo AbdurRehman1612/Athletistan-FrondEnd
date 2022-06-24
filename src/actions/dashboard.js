@@ -24,7 +24,6 @@ export const changepassword = (resetpass, router) => async (dispatch) => {
 
     dispatch({ type: resetpassword, data });
     router.push("/myprofile");
-    console.log(data);
   } catch (error) {
     dispatch(errors(error?.response?.data?.message));
   }
@@ -37,43 +36,35 @@ export const changeathletepassword =
 
       dispatch({ type: resetpassword, data });
       router.push("/myprofile");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
 export const updateprofiledata = (resetprofile, router) => async (dispatch) => {
   try {
     const { data } = await api.updatemyprofdata(resetprofile);
-    console.log(`actiondata`, data);
+
     dispatch({ type: "NEWTYPE", payload: data });
     // dispatch({ type: updatemyprofdata, resetprofile });
     router.push("/myprofile");
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 export const updateathprofiledata =
   (resetprofile, router) => async (dispatch) => {
     try {
       const { data } = await api.updateathleteprofdata(resetprofile);
-      console.log(`actiondata`, data);
+
       dispatch({ type: "NEWTYPE", payload: data });
       router.push("/athleteprofile");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
 export const availabilityandfee = (mydetails, router) => async (dispatch) => {
   try {
     const { data } = await api.Availabilityandfee(mydetails);
-    console.log(`actiondata`, data);
+
     dispatch({ type: "NEWTYPE", payload: data });
     router.push("/availabilityandfee");
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export const reportcoach = (report, router) => async (dispatch) => {
@@ -83,16 +74,13 @@ export const reportcoach = (report, router) => async (dispatch) => {
     dispatch({ type: report, data });
 
     router.push("/report");
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export const evalform = (alldetails, router) => async (dispatch) => {
-  console.log("alldetails :>> ", alldetails);
   try {
     const { data } = await api.evalform(alldetails);
-    // console.log("data1 :>> ", data);
+
     dispatch({ type: evalform, data });
 
     router.push("/evaluationform");

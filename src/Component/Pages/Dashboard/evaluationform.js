@@ -181,7 +181,7 @@ const Evaluationform = () => {
 
     bmi: "",
   };
-  console.log("inival :>> ", inival);
+
   const [alldetails, setalldetails] = useState(evalinfo);
 
   const bmivalues = {
@@ -200,16 +200,15 @@ const Evaluationform = () => {
 
   const calbmi = () => {
     var meter = bmi.hfeet * 0.3048 + bmi.hinch * 0.0254;
-    console.log("meter :>> ", meter);
+
     var sq = meter * meter;
-    console.log("square :>> ", sq);
+
     var res = (bmi.weight / sq).toFixed(2);
     setresbmi(res);
     setalldetails({ ...alldetails, bmi: res });
   };
 
   const handleselection = (e) => {
-    console.log("e.target.value", e.target.value);
     setselectedathlete(e.target.value);
   };
 
@@ -220,14 +219,12 @@ const Evaluationform = () => {
         params: { name: selectedathlete },
       })
       .then((detail) => {
-        console.log("checkkkkkk", detail.data[0]._id);
         setalldetails({
           ...alldetails,
           athletedetails: detail.data,
           athleteid: detail.data[0]._id,
           sportname: detail.data[0].areaofinterestolympics,
         });
-        console.log("detail", detail);
       });
   };
 
@@ -258,7 +255,7 @@ const Evaluationform = () => {
       );
 
       let res2 = (specpara[index].pointsper = inival);
-      console.log("res2 :>> ", res2);
+
       setspecpara((prev) => {
         return [
           ...prev.map((item, i) => {
@@ -279,7 +276,7 @@ const Evaluationform = () => {
 
       let fiper = (temp * 100) / ftotal;
       let fres = fiper.toFixed(2);
-      console.log("fressssssssss", fres);
+
       setfper(fres);
 
       // if (fres >= 80.0 && fres <= 100.0) {
@@ -372,9 +369,6 @@ const Evaluationform = () => {
     let ans = fobttotal - Number(resp);
     setfobttotal(ans);
 
-    console.log("answerr :>> ", ans);
-    console.log("resultttt :>> ", res);
-
     let fiper = (ans * 100) / res;
     let fres = fiper.toFixed(2);
 
@@ -407,18 +401,6 @@ const Evaluationform = () => {
   const saveevalform = () => {
     setalldetails({ ...alldetails, grade: fper });
   };
-
-  console.log("cid :>> ", cid);
-  console.log("details :>> ", alldetails);
-  console.log("coachname :>> ", alldetails?.coachname);
-  console.log("specpara :>> ", specpara);
-  console.log("inival :>> ", inival);
-  console.log("fobttotal :>> ", fobttotal);
-  console.log("overallspecpara :>> ", overallspecpara);
-  console.log("athletes", athletes);
-  console.log("selectedathlete", selectedathlete);
-
-  console.log("toggle :>> ", toggle);
 
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>

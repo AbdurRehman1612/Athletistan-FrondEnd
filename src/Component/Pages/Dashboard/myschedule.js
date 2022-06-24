@@ -93,7 +93,6 @@ const Myschedule = () => {
           // });
         });
 
-        console.log("schedulerData", schedulerData);
         setvalues(schedulerData);
       });
   };
@@ -103,7 +102,7 @@ const Myschedule = () => {
   }, []);
 
   // useEffect(() => {
-  //   console.log("values", values);
+  //
   // }, [values]);
 
   let today = new Date();
@@ -142,10 +141,6 @@ const Myschedule = () => {
   const routeevaluationform = () => {
     history.push("/evaluationform");
   };
-
-  console.log(currentdate);
-  console.log("coachschedule", coachschedule);
-  console.log("values", values);
 
   return (
     <div>

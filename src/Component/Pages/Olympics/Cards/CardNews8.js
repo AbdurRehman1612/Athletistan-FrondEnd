@@ -37,7 +37,7 @@ export const NewsCardDemo = React.memo(function NewsCard() {
   const shadowStyles = useBouncyShadowStyles();
 
   const [video, setVideo] = useState(false);
-  console.log(video);
+
   return (
     <div>
       <Card className={cx(styles.root, shadowStyles.root)}>

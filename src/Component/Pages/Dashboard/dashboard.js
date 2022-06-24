@@ -77,169 +77,132 @@ const Dashboard = () => {
         setathletesoverall(res.data.length);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "01" ||
             rd.trainingenddate.substring(5, 7) === "01"
           ) {
             jansum += 1;
-
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(jansum);
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "02" ||
             rd.trainingenddate.substring(5, 7) === "02"
           ) {
             febsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(febsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "03" ||
             rd.trainingenddate.substring(5, 7) === "03"
           ) {
             marsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(marsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "04" ||
             rd.trainingenddate.substring(5, 7) === "04"
           ) {
             aprsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(aprsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "05" ||
             rd.trainingenddate.substring(5, 7) === "05"
           ) {
             maysum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(maysum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "06" ||
             rd.trainingenddate.substring(5, 7) === "06"
           ) {
             junsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(junsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "07" ||
             rd.trainingenddate.substring(5, 7) === "07"
           ) {
             julsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(julsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "08" ||
             rd.trainingenddate.substring(5, 7) === "08"
           ) {
             augsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
 
         forgraph.push(augsum);
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "09" ||
             rd.trainingenddate.substring(5, 7) === "09"
           ) {
             sepsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(sepsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "10" ||
             rd.trainingenddate.substring(5, 7) === "10"
           ) {
             octsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
 
         forgraph.push(octsum);
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "11" ||
             rd.trainingenddate.substring(5, 7) === "11"
           ) {
             novsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(novsum);
 
         res.data.map((rd) => {
-          console.log("rd[i].trainingstartdate", rd);
           if (
             rd.trainingstartdate.substring(5, 7) === "12" ||
             rd.trainingenddate.substring(5, 7) === "12"
           ) {
             decsum += 1;
-            console.log("forgraph(if)", forgraph);
           } else {
-            console.log("forgraph(else)", forgraph);
           }
         });
         forgraph.push(decsum);
@@ -300,9 +263,8 @@ const Dashboard = () => {
         for (var i = 0; i < res.data.length; i++) {
           res.data.map((rd) => {
             arrfop.push(rd[i].finalobttotal);
-            console.log("arrfop", arrfop);
+
             arrtp.push(rd[i].finaltotal);
-            console.log("arrtp", arrtp);
           });
 
           setathletetotalobtpoints(arrfop);
@@ -318,18 +280,14 @@ const Dashboard = () => {
 
     for (var j = 0; j < athletetotalobtpoints.length; j++) {
       sum += athletetotalobtpoints[j];
-      console.log("athletetotalobtpoints[j]", athletetotalobtpoints);
-      console.log("sum", sum);
     }
 
     for (var k = 0; k < athletetotalpoints.length; k++) {
       sum1 += athletetotalpoints[k];
-      console.log("athletetotalpoints[k]", athletetotalpoints);
-      console.log("sum1", sum1);
     }
 
     var vts = ((sum / sum1) * 100).toFixed(2);
-    console.log("vts", vts);
+
     setvaluetoshow(vts);
   };
 
@@ -338,8 +296,6 @@ const Dashboard = () => {
 
     for (var j = 0; j < totalcoachreviews.length; j++) {
       sum += totalcoachreviews[j];
-      console.log("totalcoachreviews[j]", totalcoachreviews);
-      console.log("sum", sum);
     }
 
     var vts = (sum / outof) * 100;
@@ -449,15 +405,6 @@ const Dashboard = () => {
       },
     ],
   };
-
-  console.log("athleteper", athleteper);
-  console.log("coachper", coachper);
-  console.log("athletesoverall", athletesoverall);
-  console.log("athletetotalobtpoints", athletetotalobtpoints);
-  console.log("athletetotalpoints", athletetotalpoints);
-  console.log("outof", outof);
-  console.log("coachgraphdata", coachgraphdata);
-  console.log("totalcoachreviews", totalcoachreviews);
 
   if (token && accounttype === "Coach") {
     return (

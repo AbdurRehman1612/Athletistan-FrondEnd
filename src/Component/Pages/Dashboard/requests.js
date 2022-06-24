@@ -66,7 +66,6 @@ const Requests = () => {
   }, []);
 
   const onChange = (e) => {
-    console.log(e.target.value);
     setreqtype(e.target.value);
   };
 
@@ -102,8 +101,6 @@ const Requests = () => {
   };
 
   const handledirectreqdelete = (id) => {
-    console.log("id", id);
-
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/directreqdelete`,
       {
@@ -116,7 +113,6 @@ const Requests = () => {
 
   const handlecustomizedreqdelete = (id) => {
     setshowconfirmation(true);
-    console.log("id", id);
 
     axios.post(
       `https://athletistan.herokuapp.com/routes/dashboard/customizedreqdelete`,
@@ -128,10 +124,6 @@ const Requests = () => {
     // setshowdetails(false);
     refresh();
   };
-
-  console.log("reqtype", reqtype);
-  console.log("coachesdata", coachesdata);
-  console.log("customizedcoachesdata", customizedcoachesdata);
 
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>

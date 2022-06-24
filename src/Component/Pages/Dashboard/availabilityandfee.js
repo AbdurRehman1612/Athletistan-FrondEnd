@@ -34,7 +34,7 @@ const Availabilityandfee = () => {
   );
   const [toggle, setToggle] = useState(false);
 
-  //   console.log(ad);
+  //
 
   const handlelogout = () => {
     dispatch({ type: LOGOUT });
@@ -64,7 +64,6 @@ const Availabilityandfee = () => {
     history.push("/evaluationform");
   };
 
-  console.log("stdate", stdate.substr(0, 10));
   const details = {
     id: id,
     acctype: acctype,
@@ -77,8 +76,6 @@ const Availabilityandfee = () => {
   };
 
   const [mydetails, setmydetails] = useState(details);
-
-  console.log(`mydetails`, mydetails);
 
   const weeks = [
     "1",
@@ -122,7 +119,6 @@ const Availabilityandfee = () => {
   const handleDays = (e) => {
     if (mydetails.availabledays.includes(e.target.value)) {
       setmydetails((prev) => {
-        console.log(prev);
         return {
           ...prev,
           availabledays: prev.availabledays.filter(
@@ -132,7 +128,6 @@ const Availabilityandfee = () => {
       });
     } else {
       setmydetails((prev) => {
-        console.log(prev);
         return {
           ...prev,
           availabledays: [...prev.availabledays, e.target.value],
@@ -144,7 +139,6 @@ const Availabilityandfee = () => {
   const handleTime = (e) => {
     if (mydetails.timeslots.includes(e.target.value)) {
       setmydetails((prev) => {
-        console.log(prev);
         return {
           ...prev,
           timeslots: prev.timeslots.filter((abc) => abc !== e.target.value),
@@ -152,7 +146,6 @@ const Availabilityandfee = () => {
       });
     } else {
       setmydetails((prev) => {
-        console.log(prev);
         return {
           ...prev,
           timeslots: [...prev.timeslots, e.target.value],
@@ -165,9 +158,6 @@ const Availabilityandfee = () => {
     dispatch(availabilityandfee(mydetails, history));
     alert("Details updated successfully!");
   };
-
-  console.log(`mydetails`, mydetails);
-  console.log(`timeslots`, timeslots);
 
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>

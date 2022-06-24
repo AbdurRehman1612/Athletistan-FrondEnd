@@ -29,7 +29,6 @@ const POA = () => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/sportslist`)
       .then((res) => {
-        console.log("===========>", res.data);
         res.data.unshift("ALL SPORTS");
         sort(res.data);
       });
@@ -50,7 +49,6 @@ const POA = () => {
     if (e.target.value === "ALL SPORTS") {
       defaultathletes();
     } else {
-      console.log(e.target.value);
       axios
         .get(`https://athletistan.herokuapp.com/routes/poa/findtopathletes`, {
           params: {
@@ -64,7 +62,6 @@ const POA = () => {
   };
 
   const handlegetthedetails = (id) => {
-    console.log(id);
     setshowconfirmation(true);
     axios
       .get(`https://athletistan.herokuapp.com/routes/poa/getthedetails`, {
@@ -154,12 +151,6 @@ const POA = () => {
       smooth: "easeInOutQuart",
     });
   };
-
-  console.log("sportsname", sportsname);
-  console.log("selectedsport", selectedsport);
-  console.log("poadata", poadata);
-  console.log("details", details);
-  console.log("showconfirmation", showconfirmation);
 
   return (
     <div>

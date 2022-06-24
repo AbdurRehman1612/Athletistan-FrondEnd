@@ -20,7 +20,6 @@ const Olympicsdetails = () => {
   const [rotw, setrotw] = useState([]);
   const params = useParams();
 
-  console.log("params", params);
   useEffect(() => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/odetails`, {
@@ -29,7 +28,6 @@ const Olympicsdetails = () => {
         },
       })
       .then((res) => {
-        console.log("res.dataaaaaaaaaaaa", res.data);
         setodata(res.data);
       });
     axios
@@ -39,9 +37,7 @@ const Olympicsdetails = () => {
         },
       })
       .then((res) => {
-        console.log("res.dataaaaaaaaaaaa", res.data);
         setasia(res.data);
-        console.log("ASIA", asia);
       });
 
     axios
@@ -51,19 +47,16 @@ const Olympicsdetails = () => {
         },
       })
       .then((res) => {
-        console.log("res.dataaaaaaaaaaaaaaaaa", res.data);
-
         setrotw(res.data);
-        console.log("ROTWWW", rotw);
       });
   }, []);
 
   // const func = (m) => {
   //   const result = m.find(({ name }) => name.who === params.who);
-  //   console.log("x", result);
+  //
   // };
 
-  // console.log("xxxxxxxxx", x);
+  //
   //   };
 
   const Wrapper = styled.div`
@@ -276,10 +269,6 @@ const Olympicsdetails = () => {
       ),
     });
   };
-
-  console.log("data", odata);
-  console.log("asia", odata.asia);
-  console.log("rotw", odata.rotw);
 
   return (
     <div>
@@ -709,7 +698,7 @@ const Olympicsdetails = () => {
                   </div>
 
                   {od.topplayersmale.slice(0, 3).map((tp) => {
-                    console.log("tp===>", tp);
+                    
                     return (
                       <div className="row" style={{ marginTop: "60px" }}>
                         <div className="col">
@@ -822,7 +811,7 @@ const Olympicsdetails = () => {
                     </div>
                   </div>
                   {od.topplayersmale.slice(3, 6).map((tp) => {
-                    console.log("tp===>", tp);
+                    
                     return (
                       <div className="row" style={{ marginTop: "60px" }}>
                         <div className="col col-12 col-sm-6 col-lg-3">
@@ -948,7 +937,6 @@ const Olympicsdetails = () => {
                     style={{ marginTop: "60px" }}
                   >
                     {od.topplayers.slice(0, 3).map((tp) => {
-                      console.log("tp===>", tp);
                       return (
                         <div className={`${styles.colContainer}`}>
                           <div
@@ -984,8 +972,6 @@ const Olympicsdetails = () => {
                                   # {tp.rank}
                                 </p>
                                 {Array.apply(0, Array(tp.gold)).map((gold) => {
-                                  console.log("gold", gold);
-                                  console.log("tp.gold", tp.gold);
                                   return (
                                     <img
                                       className="img-fluid"
@@ -1082,7 +1068,6 @@ const Olympicsdetails = () => {
                     style={{ marginTop: "60px" }}
                   >
                     {od.topplayers.slice(3, 6).map((tp) => {
-                      console.log("tp===>", tp);
                       return (
                         <div className={`${styles.colContainer}`}>
                           <div
@@ -1118,8 +1103,6 @@ const Olympicsdetails = () => {
                                   # {tp.rank}
                                 </p>
                                 {Array.apply(0, Array(tp.gold)).map((gold) => {
-                                  console.log("gold", gold);
-                                  console.log("tp.gold", tp.gold);
                                   return (
                                     <img
                                       className="img-fluid"

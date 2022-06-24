@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     dispatch(getauth(l));
   }, [dispatch]);
-  console.log(`App.js l`, l?.token);
+  `App.js l`, l?.token;
   if (isLoading) {
     return null;
   }

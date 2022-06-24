@@ -79,7 +79,7 @@ const Report = () => {
   const routeathleteevaluation = () => {
     history.push("/athleteevaluation");
   };
-  console.log(`report`, report);
+
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>
       <div id="wrapper">

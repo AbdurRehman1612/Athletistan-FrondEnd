@@ -18,7 +18,7 @@ const Categoryrecords = () => {
 
   // const [prev, setprev] = useState(false);
   const params = useParams();
-  console.log("params", params);
+
   useEffect(() => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/guinness/headerimages`, {
@@ -109,11 +109,8 @@ const Categoryrecords = () => {
   // };
 
   const handleid = (who) => {
-    console.log("who", who);
     history.push(`/recorddetails/${who}`);
   };
-
-  console.log("data", data);
 
   return (
     <div>

@@ -11,7 +11,7 @@ export const errors = (msg) => {
 export const auth = (formData, router) => async (dispatch) => {
   try {
     const { data } = await api.signIn(formData);
-    console.log("data", data);
+    "data", data;
     dispatch({ type: AUTH, data });
 
     router.push("/dashboard");
@@ -23,10 +23,7 @@ export const auth = (formData, router) => async (dispatch) => {
 export const getauth = (l) => async (dispatch) => {
   try {
     dispatch({ type: getAUTH, l });
-    console.log(`l.token`, l.token);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export const coachsignup = (formData, router) => async (dispatch) => {

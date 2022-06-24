@@ -78,7 +78,6 @@ const ForgetPassword = ({ match }) => {
     }
   }, []);
 
-  console.log("hhhhhhhhhhhhhhhhhhh", params);
   // const [showPassword, setShowPassword] = useState(false);
   // const handleShowPassword = () => setShowPassword(!showPassword);
 
@@ -159,8 +158,6 @@ const ForgetPassword = ({ match }) => {
   //   const handleClick1 = () => {
   //     history.push("/athletesignup");
   //   };
-
-  console.log("form", form);
 
   if (fp) {
     if (isLoading) {

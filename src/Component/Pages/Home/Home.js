@@ -187,8 +187,6 @@ const Home = () => {
     }
   };
 
-  console.log("details :>> ", details);
-
   return (
     <body>
       <body

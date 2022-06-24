@@ -69,8 +69,6 @@ const Login = () => {
     history.push("/forgetpassword");
   };
 
-  console.log("form", form);
-
   return (
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>

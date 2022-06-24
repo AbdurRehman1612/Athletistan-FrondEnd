@@ -69,7 +69,6 @@ const Coach = (props) => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/olympics/sportslist`)
       .then((res) => {
-        console.log("===========>", res.data);
         setsportsname(res.data);
       });
 
@@ -156,8 +155,6 @@ const Coach = (props) => {
     setForm({ ...form, contactno: value });
   };
 
-  console.log("form:>> ", form);
-
   const noofexperience = [
     "Less than 1 year",
     "1 to 3 years",
@@ -170,12 +167,6 @@ const Coach = (props) => {
     history.push("/athletesignup");
   };
 
-  console.log(form?.password);
-  console.log(form?.confirmPassword);
-
-  console.log("e", e);
-
-  console.log("wp", wp);
   return (
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={3}>

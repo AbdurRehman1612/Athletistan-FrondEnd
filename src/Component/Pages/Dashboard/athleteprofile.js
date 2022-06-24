@@ -124,7 +124,6 @@ const MyProfile = () => {
   };
 
   const handleChange = (e) => {
-    console.log(`e.target`, e.target);
     setresetprofile({ ...resetprofile, [e.target.name]: e.target.value });
     if (resetprofile?.email.length > 0) {
       validateEmail(resetprofile?.email);
@@ -211,10 +210,6 @@ const MyProfile = () => {
   //   const routeevaluationform = () => {
   //     history.push("/evaluationform");
   //   };
-
-  console.log(`resetpass`, resetpass);
-  console.log(`resetprofile`, resetprofile);
-  console.log(bol);
 
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>

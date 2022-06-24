@@ -75,9 +75,6 @@ const MyAthletes = () => {
     history.push("/evaluationform");
   };
 
-  console.log("myathletes", myathletes);
-  console.log("myathletesdetails", myathletesdetails);
-
   return (
     <body id="page-top" className={`${toggle ? "sidebar-toggled" : ""}`}>
       <div id="wrapper">

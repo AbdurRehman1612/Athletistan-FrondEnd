@@ -6,9 +6,5 @@ export const Contactus = (details) => async (dispatch) => {
     const data = await api.contactus(details);
 
     dispatch({ type: contactus, data });
-
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };

@@ -16,7 +16,6 @@ const Breaktherecord = () => {
     axios
       .get(`https://athletistan.herokuapp.com/routes/guinness/guinnesscatlist`)
       .then((resp) => {
-        console.log("guinness>", resp.data);
         setguinnesscatname(resp.data);
       });
   }, []);
@@ -76,10 +75,7 @@ const Breaktherecord = () => {
     );
   };
 
-  console.log("details", details);
-  console.log("guinnesscatname", guinnesscatname);
   const s = guinnesscatname.sort();
-  console.log("s", s);
 
   return (
     <div>

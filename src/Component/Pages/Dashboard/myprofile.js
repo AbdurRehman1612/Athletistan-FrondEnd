@@ -108,7 +108,7 @@ const MyProfile = () => {
   // const data = useSelector(
   //   (state) => state.dashboardReducer?.getmyprofdata?.result
   // );
-  // console.log(`data from useSelector`, data);
+  //
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -146,7 +146,6 @@ const MyProfile = () => {
   };
 
   const handleChange = (e) => {
-    console.log(`e.target`, e.target);
     setresetprofile({ ...resetprofile, [e.target.name]: e.target.value });
     if (resetprofile?.email.length > 0) {
       validateEmail(resetprofile?.email);
@@ -205,11 +204,6 @@ const MyProfile = () => {
   const routeevaluationform = () => {
     history.push("/evaluationform");
   };
-
-  console.log(`resetpass`, resetpass);
-  console.log(`resetprofile`, resetprofile);
-  console.log(bol);
-  console.log("wp", wp);
 
   return (
     <div>

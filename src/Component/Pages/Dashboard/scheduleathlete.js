@@ -76,7 +76,6 @@ const Scheduleathlete = () => {
           });
         });
 
-        console.log("schedulerData", schedulerData);
         setvalues(schedulerData);
       });
   };
@@ -120,12 +119,11 @@ const Scheduleathlete = () => {
   //   });
   // };
 
-  console.log("values", values);
   // title: 'Website Re-Design Plan',
   // startDate: new Date(2018, 6, 23, 9, 30),
   // endDate: new Date(2018, 6, 23, 11, 30),
   const [toggle, setToggle] = useState(false);
-  // console.log(schedulerData.startDate);
+  //
 
   const handlelogout = () => {
     dispatch({ type: LOGOUT });
@@ -149,9 +147,6 @@ const Scheduleathlete = () => {
   const routereport = () => {
     history.push("/report");
   };
-
-  console.log(currentdate);
-  console.log(athleteschedule);
 
   return (
     <div>

@@ -83,7 +83,6 @@ const Guinnesscategories = () => {
   };
 
   const handleid = (name) => {
-    console.log("name", name);
     history.push(`/categoryrecords/${name}`);
   };
 
@@ -107,8 +106,6 @@ const Guinnesscategories = () => {
       smooth: "easeInOutQuart",
     });
   };
-
-  console.log("guinnessdata", guinnessdata);
 
   return (
     <div>
