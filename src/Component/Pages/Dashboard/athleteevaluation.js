@@ -45,15 +45,12 @@ const Athleteevaluation = () => {
   const data = () => {
     if (selectedcoach !== "") {
       axios
-        .get(
-          `https://athletistan.herokuapp.com/routes/dashboard/getreportdata`,
-          {
-            params: {
-              id: id,
-              coachname: selectedcoach,
-            },
-          }
-        )
+        .get(`http://localhost:5000/routes/dashboard/getreportdata`, {
+          params: {
+            id: id,
+            coachname: selectedcoach,
+          },
+        })
         .then((res) => {
           setalldata(res.data);
         });
@@ -61,7 +58,7 @@ const Athleteevaluation = () => {
   };
   const coachnames = () => {
     axios
-      .get(`https://athletistan.herokuapp.com/routes/dashboard/getcoachnames`, {
+      .get(`http://localhost:5000/routes/dashboard/getcoachnames`, {
         params: {
           id: id,
         },
@@ -133,23 +130,18 @@ const Athleteevaluation = () => {
       Number(coachreview?.q8) +
       Number(coachreview?.q9) +
       Number(coachreview?.q10);
-    
+
     average = summ / 10;
-    
 
     setcoachreview({ ...coachreview, sum: summ, avg: average });
   };
 
   const onconfirmation = (id) => {
-    axios.post(
-      `https://athletistan.herokuapp.com/routes/dashboard/postreviewforcoach`,
-      {
-        id: id,
-        alldata: coachreview,
-      }
-    );
-    
-    
+    axios.post(`http://localhost:5000/routes/dashboard/postreviewforcoach`, {
+      id: id,
+      alldata: coachreview,
+    });
+
     alert("Thank you for your feedback");
     refresh();
   };
@@ -167,11 +159,6 @@ const Athleteevaluation = () => {
   //   pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
   //   pdf.save("print.pdf");
   // };
-
-  
-  
-  
-  
 
   return (
     <div>
@@ -840,11 +827,6 @@ const Athleteevaluation = () => {
                                                         Number(gp.fitnessrating)
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.fitness",
-                                                        gp.fitnessrating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -866,11 +848,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.fitness",
-                                                        gp.fitnessrating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
@@ -931,11 +908,6 @@ const Athleteevaluation = () => {
                                                         )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.performancerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -957,11 +929,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.performancerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
@@ -1020,11 +987,6 @@ const Athleteevaluation = () => {
                                                         Number(gp.skillsrating)
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.skillsrating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -1046,11 +1008,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.skillsrating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
@@ -1120,11 +1077,6 @@ const Athleteevaluation = () => {
                                                         )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.disciplinerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -1146,11 +1098,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.disciplinerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
@@ -1209,11 +1156,6 @@ const Athleteevaluation = () => {
                                                         Number(gp.staminarating)
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.staminarating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -1235,11 +1177,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.staminarating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
@@ -1297,11 +1234,6 @@ const Athleteevaluation = () => {
                                                         Number(gp.balancerating)
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.balancerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star d-xl-flex align-items-xl-center"
@@ -1323,11 +1255,6 @@ const Athleteevaluation = () => {
                                                           )
                                                       )
                                                     ).map((gold) => {
-                                                      
-                                                      
-                                                        "gp.gold",
-                                                        gp.balancerating
-                                                      );
                                                       return (
                                                         <i
                                                           className="fa fa-star-o d-xl-flex align-items-xl-center"
