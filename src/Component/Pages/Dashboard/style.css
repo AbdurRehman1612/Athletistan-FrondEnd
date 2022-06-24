@@ -1,0 +1,24 @@
+/* .navbar-nav text-light a:hover {
+  color: #fff !important;
+} */
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+#accordionSidebar {
+  padding-right: "10px" !important;
+}
+#lists {
+  padding-right: "10px" !important;
+}
+
+#lists:hover {
+  background-color: #7d3759;
+  cursor: pointer;
+}
+
+#listsc:hover {
+  background-color: #380a39;
+  cursor: pointer;
+}

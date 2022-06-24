@@ -1,0 +1,293 @@
+// import { React, useState, useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import Table from "react-bootstrap/Table";
+// import { LOGOUT } from "../../../constants/actionTypes";
+// import { useHistory } from "react-router-dom";
+// import Input from "./Input";
+// import axios from "axios";
+// import useStyles from "./styles";
+// import { Chart, PieSeries } from "@devexpress/dx-react-chart-material-ui";
+// import { styled } from "@mui/material/styles";
+// import Icon from "./Icon";
+// import "./changepassword.css";
+// import TextField from "@mui/material/TextField";
+// import FormLabel from "@mui/material/FormLabel";
+// // import Table from "@mui/material/Table";
+// // import TableBody from "@mui/material/TableBody";
+// // import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+// // import TableContainer from "@mui/material/TableContainer";
+// // import TableHead from "@mui/material/TableHead";
+// // import TableRow from "@mui/material/TableRow";
+// import { changepassword, getprofiledata } from "../../../actions/dashboard";
+// import { ViewState } from "@devexpress/dx-react-scheduler";
+// import {
+//   Scheduler,
+//   WeekView,
+//   Appointments,
+// } from "@devexpress/dx-react-scheduler-material-ui";
+// import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+// import { blue } from "@material-ui/core/colors";
+// import { appointments } from "./Data";
+// import {
+//   Avatar,
+//   Button,
+//   Paper,
+//   Grid,
+//   Typography,
+//   Container,
+// } from "@material-ui/core";
+// import {
+//   BarSeries,
+//   ArgumentAxis,
+//   ValueAxis,
+// } from "@devexpress/dx-react-chart-material-ui";
+// import { Animation } from "@devexpress/dx-react-chart";
+
+// const Dashboard = () => {
+//   /*CHANGE PASSWORD*/
+//   const updatedpass = {
+//     chemail: "",
+//     oldpassword: "",
+//     newpassword: "",
+//     retypenewpassword: "",
+//     acctype: useSelector((state) => state.auth?.authData?.result?.accounttype),
+//   };
+
+//   const mydetails = {
+//     acctype: useSelector((state) => state.auth?.authData?.result?.accounttype),
+//     id: useSelector((state) => state.auth?.authData?.result?.email),
+//   };
+
+//   const details = mydetails;
+//   // console.log(`details`, details);
+//   const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
+//   const token = useSelector((state) => state.auth?.authData?.token);
+//   const history = useHistory();
+//   const dispatch = useDispatch();
+//   const [showPassword, setShowPassword] = useState(false);
+//   const [showdashboard, setshowdashboard] = useState(false);
+//   const [changepass, setchangepass] = useState(false);
+//   const [showmysch, setshowmysch] = useState(false);
+//   const [resetpass, setresetpass] = useState(updatedpass);
+//   const [showmyprofile, setshowmyprofile] = useState(false);
+
+//   const data = useSelector((state) => state.dashboardReducer?.getmyprofdata);
+//   console.log(`data from useSelector`, data);
+
+//   const fieldnames = [
+//     "Name",
+//     "Email",
+//     "Age",
+//     "Gender",
+//     "Address",
+//     "Contact",
+//     "Description",
+//   ];
+
+//   const classes = useStyles();
+
+//   const getdata = () => {
+//     dispatch(getprofiledata(details));
+//   };
+
+//   const handleShowPassword = () => {
+//     setShowPassword(!showPassword);
+//   };
+
+//   const handlegraphs = () => {
+//     setchangepass(false);
+//     setshowmysch(false);
+//     setresetpass(false);
+//     setshowmyprofile(false);
+//     setshowdashboard(true);
+//   };
+//   const handlelogout = () => {
+//     dispatch({ type: LOGOUT });
+//     history.push("/");
+//   };
+
+//   const handlechangepass = () => {
+//     setchangepass(true);
+//     setshowmysch(false);
+//     setshowmyprofile(false);
+//     setshowmyprofile(false);
+//   };
+
+//   const handlechange = (e) => {
+//     setresetpass({ ...resetpass, [e.target.name]: e.target.value });
+//   };
+
+//   const handlemyschedule = (e) => {
+//     setshowmysch(true);
+//     setchangepass(false);
+//     setshowmyprofile(false);
+//     setshowmyprofile(false);
+//   };
+
+//   // const handlemyprofile = (e) => {
+//   //   setshowmysch(false);
+//   //   setchangepass(false);
+//   //   setshowmyprofile(true);
+//   //   setshowmyprofile(false);
+//   //   getdata();
+//   // };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (resetpass.newpassword !== resetpass.retypenewpassword) {
+//       alert("Passwords does not match!");
+//     } else {
+//       dispatch(changepassword(resetpass, history));
+//     }
+//   };
+
+//   const graphdata = [
+//     { year: "January", population: 1 },
+//     { year: "February", population: null },
+//     { year: "March", population: 3 },
+//     { year: "April", population: 4 },
+//     { year: "May", population: 5 },
+//     { year: "June", population: 6 },
+//     { year: "July", population: 7 },
+//     { year: "August", population: 8 },
+//     { year: "September", population: 9 },
+//     { year: "October", population: 10 },
+//     { year: "November", population: 11 },
+//     { year: "December", population: 12 },
+//   ];
+//   const graphdata1 = [
+//     { arg: "1", val: 50 },
+//     { arg: "2", val: 50 },
+//   ];
+
+//   const Point = (props) => {
+//     if (props.argument === "2") {
+//       return <PieSeries.Point {...props} color="#DCDCDC" />;
+//     }
+//     return (
+//       <>
+//         <PieSeries.Point {...props} color="green" />
+//         <Text value={props.value} x={props.arg} y={props.val} />
+//       </>
+//     );
+//   };
+
+//   const Text = ({ x, y, value }) => {
+//     return (
+//       <text fontSize="20" transform={`translate(${x} ${y})`}>
+//         {value}
+//       </text>
+//     );
+//   };
+
+//   if (token) {
+//     return (
+//       <div>
+//         <p onClick={handlegraphs}>Dashboard</p>
+//         <p>My Athletes</p>
+//         <p>My Profile</p>
+//         <p onClick={handlelogout}>Logout</p>
+//         <p onClick={handlechangepass}>Change Password</p>
+//         <p onClick={handlemyschedule}>My Schedule</p>
+//         <p>My Profile</p>
+//         {changepass && (
+//           <>
+//             <Container component="main" maxWidth="xs">
+//               <Paper className={classes.paper} elevation={3}>
+//                 <Typography component="h1" variant="h5"></Typography>
+//                 <form className={classes.form} onSubmit={handleSubmit}>
+//                   <Grid container spacing={2}>
+//                     <Input
+//                       name="chemail"
+//                       label="Enter Your Email Address"
+//                       handleChange={handlechange}
+//                       type="email"
+//                     />
+//                     <Input
+//                       name="oldpassword"
+//                       label="Enter Your Old Password"
+//                       handleChange={handlechange}
+//                       type={showPassword ? "text" : "password"}
+//                       handleShowPassword={handleShowPassword}
+//                     />
+//                     <Input
+//                       name="newpassword"
+//                       label="Enter Your New Password"
+//                       handleChange={handlechange}
+//                       type={showPassword ? "text" : "password"}
+//                       handleShowPassword={handleShowPassword}
+//                     />
+//                     <Input
+//                       name="retypenewpassword"
+//                       label="Retype New Password"
+//                       handleChange={handlechange}
+//                       type={showPassword ? "text" : "password"}
+//                       handleShowPassword={handleShowPassword}
+//                     />
+//                   </Grid>
+//                   <Button
+//                     type="submit"
+//                     fullWidth
+//                     variant="contained"
+//                     color="primary"
+//                     onSubmit={handleSubmit}
+//                     className={classes.submit}
+//                   >
+//                     Change Password
+//                   </Button>
+//                 </form>
+//               </Paper>
+//             </Container>
+//           </>
+//         )}
+
+//         {showmysch && (
+//           <>
+//             <MuiThemeProvider theme={theme}>
+//               <Paper>
+//                 <Scheduler data={appointments}>
+//                   <ViewState currentDate="2018-06-28" />
+//                   <WeekView startDayHour={9} endDayHour={19} />
+//                   <Appointments />
+//                 </Scheduler>
+//               </Paper>
+//             </MuiThemeProvider>
+//           </>
+//         )}
+
+//         {showdashboard && (
+//           <>
+//             <Paper>
+//               <Chart data={graphdata} width={900} height={600}>
+//                 <ArgumentAxis />
+//                 <ValueAxis max={7} />
+
+//                 <BarSeries valueField="population" argumentField="year" />
+
+//                 <Animation />
+//               </Chart>
+//             </Paper>
+
+//             <Paper>
+//               <Chart data={graphdata1} width={900} height={300}>
+//                 <PieSeries
+//                   isAnimationActive={true}
+//                   valueField="val"
+//                   argumentField="arg"
+//                   innerRadius={0.8}
+//                   pointComponent={Point}
+//                 />
+//               </Chart>
+//             </Paper>
+//           </>
+//         )}
+//       </div>
+//     );
+//   } else {
+//     alert("You are not logged in!");
+//     history.push("/");
+//     return null;
+//   }
+// };
+
+// export default Dashboard;

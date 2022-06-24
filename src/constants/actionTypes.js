@@ -1,0 +1,14 @@
+export const AUTH = "AUTH";
+export const getAUTH = "getAUTH";
+export const LOGOUT = "LOGOUT";
+export const resetpassword = "resetpassword";
+export const resetathletepassword = "resetathletepassword";
+export const updatemyprofdata = "updatemyprofdata";
+export const updateathleteprofdata = "updateathleteprofdata";
+export const availabilityandfees = "availabilityandfees";
+export const report = "report";
+export const evalform = "evalform";
+export const contactus = "contactus";
+export const breaktherecord = "breaktherecord";
+export const addtraining = "addtraining";
+export const addcustraining = "addcustraining";
